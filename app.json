@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "random-color-generator",
-    "slug": "random-color-generator",
+    "name": "Amazing-colors",
+    "slug": "Amazing-colors",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.tushardev.AmazingColors"
     },
     "web": {
       "bundler": "metro",

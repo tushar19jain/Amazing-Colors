@@ -1,37 +1,47 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+import React from "react";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Tabs } from "expo-router";
+import { Colors } from "@/constants/Colors";
+export default function Tablayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+    <Tabs>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          headerShown:false,
+          tabBarActiveTintColor:Colors.activeTint,
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="home-filled" size={30} color={color} />
           ),
+        tabBarLabel:"Home",
+        tabBarStyle:{paddingHorizontal:20,paddingVertical:5}
         }}
-      />
+      ></Tabs.Screen>
       <Tabs.Screen
-        name="explore"
+        name="search"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          headerShown:false,
+          tabBarActiveTintColor:Colors.activeTint,
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="search" size={30} color={color} />
           ),
+          tabBarLabel:"Search",
+          tabBarStyle:{paddingHorizontal:20,paddingVertical:5}
         }}
-      />
+      ></Tabs.Screen>
+      <Tabs.Screen
+        name="saved"
+        options={{
+          headerShown:false,
+          tabBarActiveTintColor:Colors.activeTint,
+          tabBarIcon: ({ color  }) => (
+            <FontAwesome name="heart" size={24} color={color} />
+          ),
+          tabBarLabel:"Likes",
+          tabBarStyle:{paddingHorizontal:20,paddingVertical:5}
+        }}
+      ></Tabs.Screen>
     </Tabs>
   );
 }
